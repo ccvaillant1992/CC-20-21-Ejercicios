@@ -3,12 +3,14 @@
 ## Ejercicio 1: Buscar una aplicación de ejemplo, preferiblemente propia, y deducir qué patrón es el que usa. ¿Qué habría que hacer para evolucionar a un patrón tipo microservicios?
 
 La Tienda utiliza una arquitectura basada en ASP.NET Core microservicios. Las solicitudes HTTP de los clientes a la aplicación web de la tienda para que pueden acceder a los microservicios se enrutan a través de una puerta de enlace API, que es una implementación de Backens-For-Frontends. Las puertas de enlace API mejoran la seguridad y desacoplan los servicios backend de los clientes individuales.
+
 La Tienda incluye las siguientes características
 - Catálogo de servicios
 - Cesta de Compra
 - Gestión de Usuarios
 - Gestión de Pedidos
 - Pagos
+
 Cada una de las características anteriores se administra con un microservicio distinto. Cada microservicio es autónomo, se puede implementar de forma independiente y es responsable de sus propios datos.
 
 
