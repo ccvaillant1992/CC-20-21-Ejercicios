@@ -12,7 +12,7 @@ Características:
 
 Entonces, Para probar que se encuentra instalado, ingresando el comando:
 
-![Imagen1](./img/UniTradicional2.png)
+![UniTradicional](./img/UniTradicional2.png)
 
 Instalando las herramientas:
 
