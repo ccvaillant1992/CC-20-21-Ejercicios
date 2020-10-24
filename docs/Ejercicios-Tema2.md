@@ -11,19 +11,21 @@ Características:
 - .NET es compatible con Microsoft. Microsoft envía versiones oficiales que se crean y prueban en servidores mantenidos por Microsoft en Azure y son compatibles como cualquier producto de Microsoft.
 
 Entonces, Para probar que se encuentra instalado, ingresando el comando:
-
-![UniTradicional](./img/UniTradicional2.png)
+![UniTradicional2](./img/UniTradicional2.png)
 
 Instalando las herramientas:
 
 ``` $ dotnet ef ``` 
 (Entity Framework) Core Puede ser instalada como una herramienta global o local. En este caso fue instalada como una herramienta global.
+![UniTradicional3](./img/UniTradicional3.png)
 
 Actualizar las herramientas globales a la última versión
 
 Instalar una versión específica agregando al siguiente comando 
+![UniTradicional4](./img/UniTradicional4.png)
 
 ``` $ --version <VERSION>  ``` Ejecutar el siguiente comando para verificar que EF Core CLI tools fue instalada correctamente:
+![UniTradicional5](./img/UniTradicional5.png)
 
 La ubicación predeterminada de los archivos binarios de las herramientas instaladas depende del sistema operativo:
 
@@ -34,6 +36,7 @@ OS -Windows          Path-%USERPROFILE%\.dotnet\tools
 ```
 Usar múltiples entornos en ASP.NET Core
 ASP.NET Core configura el comportamiento de la aplicación según el entorno de ejecución mediante una variable de entorno.
+![UniTradicional1](./img/UniTradicional1.png)
 
 Para determinar el entorno de ejecución, ASP.NET Core lee las siguientes variables de entorno:
 - DOTNET_ENVIRONMENT
