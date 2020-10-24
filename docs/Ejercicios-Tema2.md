@@ -68,7 +68,7 @@ El comando dotnet add package proporciona una opción conveniente para agregar u
 
 ![UniTradicional7](./img/UniTradicional7.png)
 
-[Enlace](https://docs.microsoft.com/es-es/dotnet/standard/library-guidance/nuget: Referencia Documentación de Microsoft Empleada
+[Enlace](https://docs.microsoft.com/es-es/dotnet/standard/library-guidance/nuget): Referencia Documentación de Microsoft Empleada
 
 ## Ejercicio 3: Descargar el repositorio de ejemplo anterior, instalar las herramientas necesarias (principalmente Scala y sbt) y ejecutar el ejemplo desde sbt. Alternativamente, buscar otros marcos para REST en Scala tales como Finatra o Scalatra y probar los ejemplos que se incluyan en el repositorio.
 
