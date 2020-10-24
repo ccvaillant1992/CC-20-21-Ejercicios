@@ -12,7 +12,7 @@ Características:
 
 Entonces, Para probar que se encuentra instalado, ingresando el comando:
 
-![UniTradicional2](./img/UniTradicional2.png)
+![Imagen1](./img/UniTradicional2.png)
 
 Instalando las herramientas:
 
@@ -23,9 +23,7 @@ Actualizar las herramientas globales a la última versión
 
 Instalar una versión específica agregando al siguiente comando 
 
-``` $ --version <VERSION>  ```
-
-Ejecutar el siguiente comando para verificar que EF Core CLI tools fue instalada correctamente:
+``` $ --version <VERSION>  ``` Ejecutar el siguiente comando para verificar que EF Core CLI tools fue instalada correctamente:
 
 La ubicación predeterminada de los archivos binarios de las herramientas instaladas depende del sistema operativo:
 
@@ -47,7 +45,9 @@ IHostEnvironment.EnvironmentName se puede establecer en cualquier valor, pero el
 - Production : el valor predeterminado si no se han establecido DOTNET_ENVIRONMENT y ASPNETCORE_ENVIRONMENT
 
 Referencia documentación empleada:
+
 [Enlace](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet)
+
 [Enlace](https://docs.microsoft.com/es-es/aspnet/core/fundamentals/environments?view=aspnetcore-3.1)
 
 
