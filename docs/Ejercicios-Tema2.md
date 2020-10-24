@@ -23,9 +23,9 @@ Instalando las herramientas:
 
 Actualizar las herramientas globales a la última versión
 
-Instalar una versión específica agregando al siguiente comando 
-
 ![UniTradicional4](./img/UniTradicional4.png)
+
+Instalar una versión específica agregando al siguiente comando
 
 ``` $ --version <VERSION>  ``` Ejecutar el siguiente comando para verificar que EF Core CLI tools fue instalada correctamente:
 
@@ -52,11 +52,10 @@ IHostEnvironment.EnvironmentName se puede establecer en cualquier valor, pero el
 - Staging
 - Production : el valor predeterminado si no se han establecido DOTNET_ENVIRONMENT y ASPNETCORE_ENVIRONMENT
 
-Referencia documentación empleada:
 
-[Enlace](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet): Documentación Microsoft
+[Enlace](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet): Referencia Documentación de Microsoft Empleada
 
-[Enlace](https://docs.microsoft.com/es-es/aspnet/core/fundamentals/environments?view=aspnetcore-3.1): Documentación Microsoft
+[Enlace](https://docs.microsoft.com/es-es/aspnet/core/fundamentals/environments?view=aspnetcore-3.1): Referencia Documentación de Microsoft Empleada
 
 
 ## Ejercicio 2: Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
@@ -68,6 +67,8 @@ La forma principal de agregar dependencias a una biblioteca .NET es hacer refere
 El comando dotnet add package proporciona una opción conveniente para agregar una referencia de paquete a un archivo de proyecto. Después de ejecutar el comando, hay una verificación de compatibilidad para garantizar que el paquete sea compatible con los marcos del proyecto. Si la verificación pasa, se agrega un elemento <PackageReference> al archivo del proyecto y se ejecuta la restauración de dotnet.
 
 ![UniTradicional7](./img/UniTradicional7.png)
+
+[Enlace](https://docs.microsoft.com/es-es/dotnet/standard/library-guidance/nuget: Referencia Documentación de Microsoft Empleada
 
 ## Ejercicio 3: Descargar el repositorio de ejemplo anterior, instalar las herramientas necesarias (principalmente Scala y sbt) y ejecutar el ejemplo desde sbt. Alternativamente, buscar otros marcos para REST en Scala tales como Finatra o Scalatra y probar los ejemplos que se incluyan en el repositorio.
 
