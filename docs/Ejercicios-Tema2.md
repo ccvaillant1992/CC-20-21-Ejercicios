@@ -41,7 +41,7 @@ OS -Windows          Path-%USERPROFILE%\.dotnet\tools
 Usar múltiples entornos en ASP.NET Core
 ASP.NET Core configura el comportamiento de la aplicación según el entorno de ejecución mediante una variable de entorno.
 
-![UniTradicional1](./img/UniTradicional1.png)
+![UniTradiciona1](./img/UniTradiciona1.png)
 
 Para determinar el entorno de ejecución, ASP.NET Core lee las siguientes variables de entorno:
 - DOTNET_ENVIRONMENT
