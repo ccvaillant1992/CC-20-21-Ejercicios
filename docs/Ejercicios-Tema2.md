@@ -79,49 +79,46 @@ Para el microservicio Catálogo de Eventos la solución completa tiene la siguie
 
 ![estructuraTest](./img/estructuraTest.png)
 
-Comandos ejecutados:
+Para el test que ejecuté utilicé estos Comandos:
+
+
+El proyecto contenido en la carpeta Catalogo contiene la biblioteca de clases con el código que se probará. Para crear un proyecto de test ejecuté
 
 ```
-$ dotnet new sln -o unit-testing-using-dotnet-test
+$ dotnet new xunit -o Catalogo.Tests
 
 ```
-Dentro del directorio a la carpeta unit-testing-using-dotnet-test
+Agregué el proyecto de prueba al archivo de la solución ejecutando el siguiente comando:
 
 ```
-$ dotnet new classlib -o CatalogoService
-
-```
-
-El comando dotnet new classlib crea un nuevo proyecto de biblioteca de clases en la carpeta CatalogoService. La nueva biblioteca de clases contendrá el código que se probará.
-En el directorio unit-testing-using-dotnet-test, ejecute el siguiente comando para agregar el proyecto de biblioteca de clases a la solución:
-
-```
-$ dotnet sln add ./CatalogoService/CatalogoService.csproj
+$ dotnet sln add ./Catalogo.Tests/Catalogo.Tests.csproj
 
 ```
 
-Create the CatalogoService.Tests project by running the following command:
+Adicioné la clase perteneciente de mi modelo a probar como dependencia del proyecto CatalogoService.Tests:
 
 ```
-$ dotnet new xunit -o CatalogoService.Tests
-
-```
-Agregue el proyecto de prueba al archivo de la solución ejecutando el siguiente comando:
-
-```
-$ dotnet sln add ./CatalogoService.Tests/CatalogoService.Tests.csproj
+$ dotnet add ./Catalogo.Tests/Catalogo.Tests.csproj reference ./Catalogo/Catalogo.csproj
 
 ```
 
-Adicionar al CatalogoService class library as a dependency del CatalogoService.Tests project:
+![estructuraTest](./img/estructuraTest.png)
 
-```
-$ dotnet add ./CatalogoService.Tests/CatalogoService.Tests.csproj reference ./CatalogoService /CatalogoService.csproj
-
-```
 Crear el Test
 
-- Empleando el enfoque (TDD), es escribir una prueba antes de implementar el código de destino.Mi objetivo es escribir  un prueba para la opción de filtro de categoría(niño, muejr, hombre) en el catálogo de eventos para posteriormente selecionar el combo a comprar según la categoría filtrad. Entonces, el método IsCategory es invocable, pero no implementado. Una llamada de prueba a IsCategory falla. Con TDD, se escribe una prueba que se sabe que falla. El código de destino se actualiza para aprobar la prueba. Continuaré repitiendo este enfoque, escribiendo una prueba fallida y luego actualizando el código de destino para aprobar.
+- Empleando el enfoque (TDD), quiero escribir una prueba antes de implementar el código de destino. Con TDD, se escribe una prueba que se sabe que falla y el código de destino se actualiza para aprobar la prueba. En este test, la clase "ErrorViewModel" perteneciente a mi modelo de Datos, contiene una property "ShowRequestId", que me devuelve un valor booleano(true or false) en caso de que la variable recibida como parametro sea un string o no.
+
+![object](./img/object.png)
+
+La prueba realizada, descrita a continuación:
+El atributo [Fact declara un método de prueba que ejecuta el ejecutor de la prueba. Desde la carpeta Catalogo.Tests, ejecuté dotnet test. Como estoy creando un objeto nulo "objectTest", y estoy utilizando el método de aserción "Assert.False", mi prueba pasará, ya que estoy asertando que el objeto que le estoy pasando no contiene un valor string y por tanto es falso. 
+
+![test](./img/test.png)
+
+Mi resultado a continuación:
+
+![result](./img/result.png)
+
 
 [Enlace](https://docs.microsoft.com/es-es/dotnet/core/testing/unit-testing-best-practices): Referencia Documentación de Microsoft Empleada
 
