@@ -74,5 +74,56 @@ El comando dotnet add package proporciona una opción conveniente para agregar u
 
 ## Ejercicio 4: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga. A continuación, ejecutarlos desde mocha (u otro módulo de test de alto nivel), usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
+Como objetivo, quiero construir una solución que contenga un proyecto de prueba unitaria al proyecto de código fuente que se definí para cada microservicio.
+Para el microservicio Catálogo de Eventos la solución completa tiene la siguiente estructura de directorios:
+
+![estructuraTest](./img/estructuraTest.png)
+
+Comandos ejecutados:
+
+```
+$ dotnet new sln -o unit-testing-using-dotnet-test
+
+```
+Dentro del directorio a la carpeta unit-testing-using-dotnet-test
+
+```
+$ dotnet new classlib -o CatalogoService
+
+```
+
+El comando dotnet new classlib crea un nuevo proyecto de biblioteca de clases en la carpeta CatalogoService. La nueva biblioteca de clases contendrá el código que se probará.
+En el directorio unit-testing-using-dotnet-test, ejecute el siguiente comando para agregar el proyecto de biblioteca de clases a la solución:
+
+```
+$ dotnet sln add ./CatalogoService/CatalogoService.csproj
+
+```
+
+Create the CatalogoService.Tests project by running the following command:
+
+```
+$ dotnet new xunit -o CatalogoService.Tests
+
+```
+Agregue el proyecto de prueba al archivo de la solución ejecutando el siguiente comando:
+
+```
+$ dotnet sln add ./CatalogoService.Tests/CatalogoService.Tests.csproj
+
+```
+
+Adicionar al CatalogoService class library as a dependency del CatalogoService.Tests project:
+
+```
+$ dotnet add ./CatalogoService.Tests/CatalogoService.Tests.csproj reference ./CatalogoService /CatalogoService.csproj
+
+```
+Crear el Test
+
+- Empleando el enfoque (TDD), es escribir una prueba antes de implementar el código de destino.Mi objetivo es escribir  un prueba para la opción de filtro de categoría(niño, muejr, hombre) en el catálogo de eventos para posteriormente selecionar el combo a comprar según la categoría filtrad. Entonces, el método IsCategory es invocable, pero no implementado. Una llamada de prueba a IsCategory falla. Con TDD, se escribe una prueba que se sabe que falla. El código de destino se actualiza para aprobar la prueba. Continuaré repitiendo este enfoque, escribiendo una prueba fallida y luego actualizando el código de destino para aprobar.
+
+[Enlace](https://docs.microsoft.com/es-es/dotnet/core/testing/unit-testing-best-practices): Referencia Documentación de Microsoft Empleada
+
 ## Ejercicio 5: Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
 
