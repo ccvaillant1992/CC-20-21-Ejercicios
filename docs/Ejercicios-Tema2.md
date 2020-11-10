@@ -91,9 +91,7 @@ Es el marco de prueba elegido por mi. Es una herramienta de prueba unitaria grat
 
 Las pruebas realizadas hasta ahora, descritas a continuación:
 
-[Enlace](): Pruebas realizadas
-
-El atributo [Fact] declara un método de prueba que ejecuta el ejecutor de la prueba. Desde la carpeta Functions.Tests, ejecuté dotnet test. Estoy utilizando el método de aserción "Assert.True", en las pruebas, estoy asertando que puedo insertar un evento, checkeo que el evento existe antes de insertar un combo. 
+El atributo [Fact] en cada prueba, declara un método de prueba que ejecuta el ejecutor de la prueba. Desde la carpeta Functions.Tests, ejecuté dotnet test. Estoy utilizando el método de aserción "Assert.True", en las pruebas ya estoy asertando que puedo insertar un evento, que checkeo que el evento existe,  antes de insertar un combo. 
 
 Entonces, siguiendo la estructura de directorio del proyecto a continuación:
 
@@ -103,10 +101,12 @@ Para el test que ejecuté utilicé estos Comandos:
 
 Se ha desarrollado el proyecto de prueba unitaria para el microservicio desarrollado hasta ahora, relacionado a dos de las historias de usuarios planteadas:
 
-- [Como Administrador de la aplicación, necesito poder añadir un evento nuevo al sistema]()
+
+- Como Administrador de la aplicación, necesito poder añadir un evento nuevo al sistema
 
 
-- [Como Administrador de la aplicación, necesito añadir un nuevo combo a un evento determinado]()
+- Como Administrador de la aplicación, necesito añadir un nuevo combo a un evento determinado
+
 
 Para ello he desarrollado 3 pruebas unitarias mostradas a continuación:
 
