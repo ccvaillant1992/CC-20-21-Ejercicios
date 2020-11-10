@@ -74,52 +74,69 @@ El comando dotnet add package proporciona una opción conveniente para agregar u
 
 ## Ejercicio 4: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga. A continuación, ejecutarlos desde mocha (u otro módulo de test de alto nivel), usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
-Como objetivo, quiero construir una solución que contenga un proyecto de prueba unitaria al proyecto de código fuente que se definí para cada microservicio.
-Para el microservicio Catálogo de Eventos la solución completa tiene la siguiente estructura de directorios:
+Crear los tests:
+
+- Tener pruebas automatizadas es una excelente manera de garantizar que el código de la aplicación haga lo que pretendo que haga. 
+
+- Explicaré las pruebas unitarias desarrolladas hasta ahora al microservicio Catálogo, partiendo de que se considera como prueba unitaria: es una prueba que ejercita componentes o métodos de software individuales, también conocida como "unidad de trabajo". Las pruebas unitarias solo deben probar el código que esté bajo el control del desarrollador.
+
+Herramienta de prueba empleada:
+- .NET es una plataforma de desarrollo en varios idiomas y puede escribir varios tipos de prueba para C #, F # y Visual Basic. Para cada uno de estos lenguajes, se puede elegir entre varios marcos de prueba.
+
+xUnit:
+
+Es el marco de prueba elegido por mi. Es una herramienta de prueba unitaria gratuita, de código abierto y centrada en la comunidad para .NET.
+
+[Enlace](https://xunit.net/): Referencia Documentación de xUnit
+
+Las pruebas realizadas hasta ahora, descritas a continuación:
+
+[Enlace](): Pruebas realizadas
+
+El atributo [Fact] declara un método de prueba que ejecuta el ejecutor de la prueba. Desde la carpeta Functions.Tests, ejecuté dotnet test. Estoy utilizando el método de aserción "Assert.True", en las pruebas, estoy asertando que puedo insertar un evento, checkeo que el evento existe antes de insertar un combo. 
+
+Entonces, siguiendo la estructura de directorio del proyecto a continuación:
 
 ![estructuraTest](./img/estructuraTest.png)
 
 Para el test que ejecuté utilicé estos Comandos:
 
+Se ha desarrollado el proyecto de prueba unitaria para el microservicio desarrollado hasta ahora, relacionado a dos de las historias de usuarios planteadas:
 
-El proyecto contenido en la carpeta Catalogo contiene la biblioteca de clases con el código que se probará. Para crear un proyecto de test ejecuté
+- [Como Administrador de la aplicación, necesito poder añadir un evento nuevo al sistema]()
+
+
+- [Como Administrador de la aplicación, necesito añadir un nuevo combo a un evento determinado]()
+
+Para ello he desarrollado 3 pruebas unitarias mostradas a continuación:
+
+![InsertEventoTest](./img/InsertEventoTest.png)
+
+![InsertComboTest](./img/InsertComboTest.png)
+
+![CheckEventExist](./img/CheckEventExist.png)
+
+Comandos ejecutados:
+
+Crear el proyecto Functions.Test :
 
 ```
-$ dotnet new xunit -o Catalogo.Tests
+$ dotnet new xunit -o Functions.Test
 
 ```
 Agregué el proyecto de prueba al archivo de la solución ejecutando el siguiente comando:
 
 ```
-$ dotnet sln add ./Catalogo.Tests/Catalogo.Tests.csproj
+$ dotnet sln add ./Functions.Test/Functions.Test.csproj
 
 ```
 
-Adicioné la clase perteneciente de mi modelo a probar como dependencia del proyecto CatalogoService.Tests:
+Adicioné la clase perteneciente de mi modelo a probar como dependencia del proyecto Functions.Test 
 
 ```
-$ dotnet add ./Catalogo.Tests/Catalogo.Tests.csproj reference ./Catalogo/Catalogo.csproj
+$ dotnet add ./Functions.Test/Functions.Test.csproj reference ./Functios/Functios.csproj
 
 ```
-
-![estructuraTest](./img/estructuraTest.png)
-
-Crear el Test
-
-- Empleando el enfoque (TDD), quiero escribir una prueba antes de implementar el código de destino. Con TDD, se escribe una prueba que se sabe que falla y el código de destino se actualiza para aprobar la prueba. En este test, la clase "ErrorViewModel" perteneciente a mi modelo de Datos, contiene una property "ShowRequestId", que me devuelve un valor booleano(true or false) en caso de que la variable recibida como parametro sea un string o no.
-
-![object](./img/object.png)
-
-La prueba realizada, descrita a continuación:
-El atributo [Fact declara un método de prueba que ejecuta el ejecutor de la prueba. Desde la carpeta Catalogo.Tests, ejecuté dotnet test. Como estoy creando un objeto nulo "objectTest", y estoy utilizando el método de aserción "Assert.False", mi prueba pasará, ya que estoy asertando que el objeto que le estoy pasando no contiene un valor string y por tanto es falso. 
-
-![test](./img/test.png)
-
-Mi resultado a continuación:
-
-![result](./img/result.png)
-
-
 [Enlace](https://docs.microsoft.com/es-es/dotnet/core/testing/unit-testing-best-practices): Referencia Documentación de Microsoft Empleada
 
 ## Ejercicio 5: Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
